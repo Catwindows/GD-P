@@ -116,10 +116,6 @@
             text-shadow: 0 0 12px var(--accent-glow);
         }
 
-        .glow-box {
-            box-shadow: 0 0 20px var(--accent-bg);
-        }
-
         /* Screen Transitions */
         .screen-container {
             position: relative;
@@ -189,7 +185,7 @@
         }
 
         .animate-flip {
-            animation: flipCell 0.5s ease forward;
+            animation: flipCell 0.5s ease forwards;
         }
 
         /* Custom Scrollbar */
@@ -222,7 +218,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
 
-    <!-- Subtle Fixed Watermark at Bottom Right -->
+    <!-- Watermark at Bottom Right -->
     <div id="pageWatermark" class="fixed bottom-3 right-4 z-40 pointer-events-none select-none opacity-30 text-[10px] md:text-xs font-mono tracking-widest uppercase text-cyan-300 flex items-center gap-1.5 transition-all duration-500 drop-shadow-md">
         <i class="fa-solid fa-copyright text-cyan-400"></i>
         <span id="watermarkText">BẢN QUYỀN © DƯƠNG KHẢI MINH</span>
@@ -268,10 +264,9 @@
                 <!-- System Information Output -->
                 <div class="space-y-1 text-slate-300 mb-4 text-xs sm:text-sm">
                     <p><span class="text-cyan-400 font-bold">AUTHOR</span>      : Dương Khải Minh</p>
-                    <p><span class="text-cyan-400 font-bold">SYSTEM</span>      : Ca Dao Vĩnh Long Edu-Gaming Platform</p>
-                    <p><span class="text-cyan-400 font-bold">ENGINE</span>      : Vanilla HTML5 / Tailwind / Web Audio API</p>
-                    <p><span class="text-cyan-400 font-bold">THEME</span>       : Deep Blue Futuristic Glassmorphism</p>
-                    <p><span class="text-cyan-400 font-bold">MODULES</span>     : [01] Đố Vui  |  [02] Đoán Ô Chữ</p>
+                    <p><span class="text-cyan-400 font-bold">SYSTEM</span>      : Ca Dao & Thơ Vĩnh Long Edu-Game</p>
+                    <p><span class="text-cyan-400 font-bold">ENGINE</span>      : HTML5 / Tailwind CSS / Web Audio Synthesizer</p>
+                    <p><span class="text-cyan-400 font-bold">MODULES</span>     : [01] Đoán Thơ Ca Dao  |  [02] Ô Chữ Vĩnh Long  |  [03] Đoán Từ Ca Dao</p>
                     <p><span class="text-cyan-400 font-bold">STATUS</span>      : <span class="text-emerald-400 font-bold animate-pulse">● ONLINE</span></p>
                 </div>
 
@@ -312,7 +307,7 @@
 
                 <div class="space-y-2">
                     <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">XIN CHÀO 👋</h2>
-                    <p class="text-slate-400 text-sm">Hãy nhập họ và tên của bạn để bắt đầu hành trình khám phá ca dao Vĩnh Long.</p>
+                    <p class="text-slate-400 text-sm">Hãy nhập họ và tên của bạn để bắt đầu thử thách đoán thơ ca dao Vĩnh Long.</p>
                 </div>
 
                 <form onsubmit="handleNameSubmit(event)" class="space-y-4">
@@ -324,7 +319,7 @@
                     </div>
 
                     <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-base shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50 transition-all duration-300 flex items-center justify-center gap-2 group">
-                        <span>TIẾP TỤC</span>
+                        <span>BẮT ĐẦU CHƠI</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </button>
                 </form>
@@ -372,41 +367,41 @@
                     HỆ THỐNG TRÒ CHƠI VĂN HÓA DÂN GIAN
                 </div>
                 <h1 class="text-3xl md:text-5xl font-black tracking-tight text-white">
-                    NHỮNG CÂU CA DAO <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent glow-text">VĨNH LONG</span>
+                    ĐOÁN THƠ & CA DAO <span class="bg-gradient-to-r from-cyan-400 via-sky-300 to-blue-500 bg-clip-text text-transparent glow-text">VĨNH LONG</span>
                 </h1>
                 <p class="text-slate-400 text-sm md:text-base max-w-xl mx-auto">
-                    Hãy lựa chọn một trong hai chế độ thử thách bên dưới để trau dồi kiến thức ca dao và nét đẹp quê hương sông nước.
+                    Đọc các câu thơ, câu hò ngọt ngào và đoán xem đoạn thơ đang nhắc tới địa danh, sản vật hay nét đẹp văn hóa nào của Vĩnh Long.
                 </p>
             </div>
 
             <!-- Game Mode Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                <!-- CARD 1: ĐỐ VUI -->
-                <div onclick="startQuiz()" class="glass-card glass-card-hover rounded-2xl p-6 md:p-8 cursor-pointer flex flex-col justify-between space-y-6 group relative overflow-hidden border border-cyan-500/30">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                <!-- CARD 1: ĐOÁN THƠ CA DAO -->
+                <div onclick="startQuiz()" class="glass-card glass-card-hover rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 group relative overflow-hidden border border-cyan-500/30">
                     <div class="absolute -top-10 -right-10 w-36 h-36 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all"></div>
                     
                     <div class="flex items-start justify-between">
                         <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 text-3xl group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
-                            🧠
+                            📜
                         </div>
-                        <span class="px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-700/50 text-cyan-400 text-xs font-mono">15 CÂU HỎI</span>
+                        <span class="px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-700/50 text-cyan-400 text-xs font-mono">15 CÂU THƠ</span>
                     </div>
 
                     <div class="space-y-2">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-cyan-300 transition-colors">ĐỐ VUI</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Kiểm tra kiến thức về các câu ca dao, địa danh, đặc sản và văn hóa dân gian độc đáo của miền đất Vĩnh Long.
+                        <h3 class="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">ĐOÁN THƠ CA DAO</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Đọc các vần thơ ca dao đậm đà tình quê và chọn đáp án chính xác về địa danh, sông nước hay đặc sản Vĩnh Long.
                         </p>
                     </div>
 
-                    <button class="w-full py-3 rounded-xl bg-slate-900/90 border border-cyan-500/40 text-cyan-300 font-bold text-sm group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 group-hover:text-white group-hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2">
+                    <button class="w-full py-2.5 rounded-xl bg-slate-900/90 border border-cyan-500/40 text-cyan-300 font-bold text-xs group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 group-hover:text-white group-hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2">
                         <span>CHƠI NGAY</span>
-                        <i class="fa-solid fa-play text-xs"></i>
+                        <i class="fa-solid fa-play text-[10px]"></i>
                     </button>
                 </div>
 
                 <!-- CARD 2: ĐOÁN Ô CHỮ -->
-                <div onclick="startCrossword()" class="glass-card glass-card-hover rounded-2xl p-6 md:p-8 cursor-pointer flex flex-col justify-between space-y-6 group relative overflow-hidden border border-blue-500/30">
+                <div onclick="startCrossword()" class="glass-card glass-card-hover rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 group relative overflow-hidden border border-blue-500/30">
                     <div class="absolute -top-10 -right-10 w-36 h-36 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
                     
                     <div class="flex items-start justify-between">
@@ -417,15 +412,39 @@
                     </div>
 
                     <div class="space-y-2">
-                        <h3 class="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors">ĐOÁN Ô CHỮ</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">
-                            Giải đáp các hàng từ khóa bí ẩn liên quan đến sông nước, danh nhân, di sản và sản vật quê hương Vĩnh Long.
+                        <h3 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">ĐOÁN Ô CHỮ</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Lần theo gợi ý thơ văn để tìm ra các từ khóa giấu trong ô chữ về danh nhân, địa danh và di sản xứ Vĩnh.
                         </p>
                     </div>
 
-                    <button class="w-full py-3 rounded-xl bg-slate-900/90 border border-blue-500/40 text-blue-300 font-bold text-sm group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-blue-600 group-hover:text-white group-hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2">
+                    <button class="w-full py-2.5 rounded-xl bg-slate-900/90 border border-blue-500/40 text-blue-300 font-bold text-xs group-hover:bg-gradient-to-r group-hover:from-cyan-500 group-hover:to-blue-600 group-hover:text-white group-hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2">
                         <span>CHƠI NGAY</span>
-                        <i class="fa-solid fa-gamepad text-xs"></i>
+                        <i class="fa-solid fa-gamepad text-[10px]"></i>
+                    </button>
+                </div>
+
+                <!-- CARD 3: ĐOÁN TỪ CA DAO (ĐIỀN TỪ CÒN THIẾU) -->
+                <div onclick="startWordGuess()" class="glass-card glass-card-hover rounded-2xl p-6 cursor-pointer flex flex-col justify-between space-y-6 group relative overflow-hidden border border-emerald-500/30">
+                    <div class="absolute -top-10 -right-10 w-36 h-36 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
+                    
+                    <div class="flex items-start justify-between">
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-3xl group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
+                            🧩
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-700/50 text-emerald-400 text-xs font-mono">12 CÂU TỪ</span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="text-xl font-bold text-white group-hover:text-emerald-300 transition-colors">ĐOÁN TỪ CA DAO</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed">
+                            Thử tài trí nhớ điền từ còn thiếu bị che khuất trong các câu thơ, câu hò trứ danh của tỉnh Vĩnh Long.
+                        </p>
+                    </div>
+
+                    <button class="w-full py-2.5 rounded-xl bg-slate-900/90 border border-emerald-500/40 text-emerald-300 font-bold text-xs group-hover:bg-gradient-to-r group-hover:from-emerald-600 group-hover:to-teal-400 group-hover:text-white group-hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2">
+                        <span>CHƠI NGAY</span>
+                        <i class="fa-solid fa-puzzle-piece text-[10px]"></i>
                     </button>
                 </div>
             </div>
@@ -448,17 +467,17 @@
         </section>
 
         <!-- ========================================== -->
-        <!-- 4. GAME 1: ĐỐ VUI                          -->
+        <!-- 4. GAME 1: ĐOÁN THƠ CA DAO (QUIZ)          -->
         <!-- ========================================== -->
         <section id="quizScreen" class="screen flex-col items-center justify-center max-w-3xl w-full py-6 my-auto space-y-6">
             <!-- Quiz Header Bar -->
             <div class="glass-card rounded-2xl p-4 w-full flex items-center justify-between border border-cyan-500/30">
                 <button onclick="returnToMenu()" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-slate-300 hover:text-white hover:border-cyan-400 transition-all flex items-center gap-1.5">
-                    <i class="fa-solid fa-chevron-left"></i> MENUS
+                    <i class="fa-solid fa-chevron-left"></i> MENU
                 </button>
                 <div class="flex items-center gap-2">
                     <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                    <h2 class="text-base font-bold text-white tracking-wide">🧠 ĐỐ VUI CA DAO</h2>
+                    <h2 class="text-base font-bold text-white tracking-wide">📜 ĐOÁN THƠ CA DAO</h2>
                 </div>
                 <div class="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-900 border border-cyan-500/40 text-cyan-400 font-bold">
                     ⏱ <span id="quizTimer">00:00</span>
@@ -482,15 +501,23 @@
                 <!-- Difficulty & Theme Tag -->
                 <div class="flex items-center justify-between">
                     <span id="quizTag" class="px-3 py-0.5 rounded-full bg-cyan-950 border border-cyan-800 text-[11px] font-mono text-cyan-300 uppercase">
-                        VĂN HÓA VĨNH LONG
+                        THƠ CA DAO VĨNH LONG
                     </span>
-                    <span id="quizDifficulty" class="text-xs font-mono text-slate-400">DỄ</span>
+                    <span id="quizDifficulty" class="text-xs font-mono text-slate-400">THƠ</span>
                 </div>
 
-                <!-- Question Text -->
-                <div class="min-h-[90px] flex items-center">
-                    <h3 id="quizQuestionText" class="text-lg md:text-xl font-bold text-white leading-relaxed">
-                        Đang tải câu hỏi...
+                <!-- Poem Display Box -->
+                <div class="p-5 rounded-xl bg-slate-950/70 border border-cyan-500/30 text-center space-y-3 shadow-inner">
+                    <p class="text-xs uppercase font-mono tracking-widest text-cyan-400 font-bold">ĐỌC CÂU THƠ / CA DAO SAU:</p>
+                    <div id="quizPoemText" class="italic font-serif text-lg md:text-xl text-amber-200 leading-relaxed drop-shadow-sm">
+                        <!-- Dynamic Poem Lines -->
+                    </div>
+                </div>
+
+                <!-- Question Prompt -->
+                <div>
+                    <h3 id="quizQuestionText" class="text-base md:text-lg font-bold text-white text-center">
+                        Đoạn thơ trên nhắc đến điều gì hay địa danh nào?
                     </h3>
                 </div>
 
@@ -502,7 +529,7 @@
                 <!-- Explanation Box (Hidden until answer selected) -->
                 <div id="quizExplanationBox" class="hidden rounded-xl p-4 bg-slate-950/80 border border-cyan-500/40 space-y-2 transition-all">
                     <div class="flex items-center gap-2 font-bold text-sm" id="explanationTitle">
-                        <i class="fa-solid fa-circle-info"></i> GIẢI THÍCH CHI TIẾT
+                        <i class="fa-solid fa-circle-info"></i> CHI TIẾT Ý NGHĨA
                     </div>
                     <p id="explanationText" class="text-xs md:text-sm text-slate-300 leading-relaxed"></p>
                 </div>
@@ -543,7 +570,7 @@
                         <span id="crosswordLevelTag" class="text-xs font-mono px-3 py-1 rounded-full bg-blue-950 text-blue-300 border border-blue-800">
                             MÀN 01 / 10
                         </span>
-                        <span id="crosswordCategory" class="ml-2 text-xs text-slate-400">Chủ đề: Địa danh</span>
+                        <span id="crosswordCategory" class="ml-2 text-xs text-slate-400">Chủ đề: Thơ ca & Địa danh</span>
                     </div>
                     <div class="flex items-center gap-4 text-xs font-mono">
                         <span class="text-slate-400">SCORE: <strong id="crosswordScoreDisplay" class="text-cyan-400 font-black">0</strong></span>
@@ -560,8 +587,8 @@
 
                 <!-- Hints List Panel -->
                 <div class="space-y-3 bg-slate-950/40 p-4 rounded-xl border border-white/5">
-                    <h4 class="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold">
-                        <i class="fa-solid fa-lightbulb text-amber-400 mr-1"></i> MANH MỐI GỢI Ý
+                    <h4 class="text-xs font-mono text-cyan-400 uppercase tracking-widest font-bold flex items-center gap-1.5">
+                        <i class="fa-solid fa-lightbulb text-amber-400"></i> GỢI Ý TỪ CÂU THƠ
                     </h4>
                     <ul id="crosswordCluesList" class="space-y-2 text-xs md:text-sm text-slate-300">
                         <!-- Dynamic clues list -->
@@ -574,6 +601,79 @@
                     <div id="virtualKeyboard" class="flex flex-col items-center gap-1.5">
                         <!-- Dynamic virtual keyboard rows -->
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 5B. GAME 3: ĐOÁN TỪ CA DAO (WORD GUESS)    -->
+        <!-- ========================================== -->
+        <section id="wordGuessScreen" class="screen flex-col items-center justify-center max-w-3xl w-full py-6 my-auto space-y-6">
+            <!-- Header Bar -->
+            <div class="glass-card rounded-2xl p-4 w-full flex items-center justify-between border border-emerald-500/30">
+                <button onclick="returnToMenu()" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs font-medium text-slate-300 hover:text-white hover:border-emerald-400 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-chevron-left"></i> MENU
+                </button>
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <h2 class="text-base font-bold text-white tracking-wide">🧩 ĐOÁN TỪ CÒN THIẾU</h2>
+                </div>
+                <div class="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-900 border border-emerald-500/40 text-emerald-400 font-bold">
+                    ⏱ <span id="wordGuessTimer">00:00</span>
+                </div>
+            </div>
+
+            <!-- Main Game Box -->
+            <div class="glass-card rounded-2xl p-6 md:p-8 w-full space-y-6 relative border border-emerald-500/30">
+                <!-- Progress Header -->
+                <div class="space-y-2">
+                    <div class="flex justify-between items-center text-xs font-mono">
+                        <span class="text-emerald-400 font-bold" id="wordGuessLevelTag">CÂU 01 / 12</span>
+                        <span class="text-slate-400">SCORE: <strong id="wordGuessScoreDisplay" class="text-cyan-400 font-black">0</strong></span>
+                    </div>
+                    <!-- Progress Bar -->
+                    <div class="w-full h-2 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+                        <div id="wordGuessProgressBar" class="h-full bg-gradient-to-r from-emerald-500 to-teal-300 w-0 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <!-- Poem Display Box with Blank -->
+                <div class="p-6 rounded-2xl bg-slate-950/80 border border-emerald-500/30 text-center space-y-4 shadow-inner">
+                    <div class="inline-block px-3 py-1 rounded-full bg-emerald-950 border border-emerald-800 text-[11px] font-mono text-emerald-300 uppercase">
+                        ĐIỀN TỪ CÒN THIẾU VÀO DẤU [...]:
+                    </div>
+                    <div id="wordGuessPoemBox" class="italic font-serif text-lg md:text-2xl text-amber-200 leading-relaxed">
+                        <!-- Dynamic Poem line with styled blank -->
+                    </div>
+                </div>
+
+                <!-- Word Selection Tiles / Options -->
+                <div class="space-y-3">
+                    <div class="text-xs font-mono text-slate-400 text-center uppercase tracking-widest">
+                        CHỌN TỪ ĐÚNG ĐỂ HOÀN THÀNH CÂU CA DAO:
+                    </div>
+                    <div id="wordGuessOptionsGrid" class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <!-- Dynamic word tiles inserted via JS -->
+                    </div>
+                </div>
+
+                <!-- Explanation Box -->
+                <div id="wordGuessExplanationBox" class="hidden rounded-xl p-4 bg-slate-950/80 border border-emerald-500/40 space-y-2 transition-all">
+                    <div class="flex items-center gap-2 font-bold text-sm text-emerald-400" id="wordGuessExplTitle">
+                        <i class="fa-solid fa-circle-check"></i> CHÍNH XÁC!
+                    </div>
+                    <p id="wordGuessExplText" class="text-xs md:text-sm text-slate-300 leading-relaxed"></p>
+                </div>
+
+                <!-- Footer Action Bar -->
+                <div class="flex items-center justify-between pt-2 border-t border-slate-800/80">
+                    <button onclick="useWordGuessHint()" class="px-4 py-2 rounded-xl bg-amber-500/10 border border-amber-500/40 text-amber-300 hover:bg-amber-500/20 text-xs font-semibold transition-all flex items-center gap-1.5">
+                        💡 GỢI Ý (-50 PTS)
+                    </button>
+                    <button id="nextWordGuessBtn" onclick="nextWordGuessLevel()" class="hidden px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-400 hover:from-emerald-500 hover:to-teal-300 text-white font-bold text-sm shadow-lg shadow-emerald-500/30 transition-all items-center gap-2">
+                        <span>CÂU TIẾP THEO</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
@@ -651,7 +751,7 @@
                     </div>
                 </div>
 
-                <!-- Particle Intensity -->
+                <!-- Particle Density -->
                 <div class="space-y-2">
                     <label class="font-semibold text-slate-300 block">Mật độ hiệu ứng Particle (Hạt sáng):</label>
                     <div class="grid grid-cols-3 gap-2">
@@ -678,7 +778,7 @@
 
     <!-- GLOBAL FOOTER -->
     <footer class="relative z-10 py-3 text-center text-xs text-slate-500 font-mono border-t border-slate-900/60 bg-slate-950/40 backdrop-blur-sm">
-        <p>Bản quyền thuộc về © 2026 <strong class="text-cyan-400">Dương Khải Minh</strong> — Kho tàng Ca Dao Vĩnh Long</p>
+        <p>Bản quyền thuộc về © 2026 <strong class="text-cyan-400">Dương Khải Minh</strong> — Thơ & Ca Dao Vĩnh Long</p>
     </footer>
 
     <!-- ========================================== -->
@@ -686,273 +786,365 @@
     <!-- ========================================== -->
     <script>
         // ===============================================
-        // 1. QUIZ QUESTION DATABASE (22+ Questions)
+        // 1. POEM QUIZ DATABASE (UPDATED FROM USER POEMS)
         // ===============================================
         const quizQuestionsPool = [
             {
-                question: "Cù lao An Bình nổi tiếng của tỉnh Vĩnh Long nằm giữa dòng sông thơ mộng nào?",
-                options: ["Sông Cổ Chiên", "Sông Hậu", "Sông Sài Gòn", "Sông Đồng Nai"],
+                poem: "“Vĩnh Long có bưởi Năm Roi,<br>Có người con gái đẹp người đẹp nết.”",
+                question: "Câu thơ trên nhắc đến loại trái cây đặc sản nổi tiếng nào của Vĩnh Long?",
+                options: ["Bưởi Năm Roi", "Cam sành Trà Ôn", "Sầu riêng Ri6", "Chôm chôm Java"],
                 answer: 0,
-                explanation: "Cù lao An Bình nằm trọn trên sông Cổ Chiên (một nhánh lớn của Sông Tiền), là vùng đất nổi tiếng về du lịch sinh thái và vườn cây ăn trái quanh năm.",
-                difficulty: "easy"
+                explanation: "Bưởi Năm Roi trứ danh Bình Minh (Vĩnh Long) nổi tiếng múi ngọt thanh, không hạt, gắn bó với vẻ đẹp thanh lịch của con người xứ Vĩnh.",
+                tag: "ĐẶC SẢN"
             },
             {
-                question: "Huyện Mang Thít của tỉnh Vĩnh Long từng được mệnh danh là gì nhờ truyền thống sản xuất độc đáo?",
-                options: ["Vương quốc lò gạch gốm đỏ", "Thủ phủ dừa xiêm", "Xứ sở hoa kiểng", "Làng nghề chiếu Cà Mau"],
+                poem: "“Vĩnh Long đất tốt cây xanh,<br>Sông Tiền nước ngọt, cá lành quanh năm.”",
+                question: "Dòng sông nào được ngợi ca mang nguồn nước ngọt bồi đắp cho đất đai Vĩnh Long trong câu thơ?",
+                options: ["Sông Tiền", "Sông Sài Gòn", "Sông Đồng Nai", "Sông Vàm Cỏ"],
                 answer: 0,
-                explanation: "Mang Thít nức tiếng khắp Nam Bộ với hàng nghìn lò gạch gốm đỏ nằm nối tiếp nhau ven các con sông, tạo thành di sản kiến trúc 'Vương quốc lò gạch'.",
-                difficulty: "easy"
+                explanation: "Sông Tiền chảy qua Vĩnh Long đem lại lượng phù sa mỡ màu, nguồn nước ngọt quanh năm nuôi dưỡng vườn cây trĩu quả.",
+                tag: "SÔNG NƯỚC"
             },
             {
-                question: "Đặc sản trái cây nổi tiếng gắn liền với tên tuổi địa danh huyện Trà Ôn là loại trái nào?",
-                options: ["Cam sành Trà Ôn", "Vú sữa Lò Rèn", "Sầu riêng Ri6", "Nhãn xuồng cơm vàng"],
+                poem: "“Ai về Bình Minh quê tôi,<br>Thăm vườn cây trái, thăm người thủy chung.”",
+                question: "Đoạn thơ trên mời gọi du khách về thăm địa danh nào của tỉnh Vĩnh Long?",
+                options: ["Thị xã Bình Minh", "Huyện Tam Bình", "Huyện Long Hồ", "Huyện Vũng Liêm"],
                 answer: 0,
-                explanation: "Cam sành Trà Ôn là đặc sản trái cây vô cùng ngọt mát, vỏ mỏng nhiều nước, nổi tiếng xa gần của miền đất Trà Ôn - Vĩnh Long.",
-                difficulty: "easy"
+                explanation: "Bình Minh là địa danh nổi tiếng với những vườn cây trái xanh tốt và lòng mến khách, thủy chung của người dân Nam Bộ.",
+                tag: "ĐỊA DANH"
             },
             {
-                question: "Bài ca dao: 'Chợ Sài Gòn chốm chốm bề thanh / Chợ Tam Bình bán chanh bán ớt...' nhắc đến huyện nào của Vĩnh Long?",
-                options: ["Tam Bình", "Long Hồ", "Vũng Liêm", "Bình Tân"],
+                poem: "“Cái Bè, Cái Mơn, Chợ Lách,<br>Vĩnh Long cây trái ngọt lành bốn mùa.”",
+                question: "Câu thơ ngợi ca nét đẹp tự nhiên nào đặc trưng nhất của vùng đất Vĩnh Long?",
+                options: ["Cây trái ngọt lành bốn mùa", "Núi cao chót vót", "Bãi biển dài mênh mông", "Làng đúc đồng truyền thống"],
                 answer: 0,
-                explanation: "Bài ca dao dân gian nhắc tới chợ Tam Bình, một huyện nằm ở khu vực trung tâm tỉnh Vĩnh Long giàu nông sản.",
-                difficulty: "easy"
+                explanation: "Nằm ở trung tâm đồng bằng sông Cửu Long, Vĩnh Long nổi tiếng với miệt vườn cây trái trĩu quả quanh năm.",
+                tag: "MIỆT VƯỜN"
             },
             {
-                question: "Cây cầu dây văng đầu tiên của Việt Nam bắc qua Sông Tiền nối liền Vĩnh Long và Tiền Giang có tên là gì?",
-                options: ["Cầu Mỹ Thuận", "Cầu Cổ Chiên", "Cầu Cần Thơ", "Cầu Rạch Miễu"],
+                poem: "“Vĩnh Long nổi tiếng cù lao,<br>Cây xanh trái ngọt ngọt ngào phù sa.”",
+                question: "Hình thái địa hình sinh thái độc đáo nào của Vĩnh Long được nhắc đến trong câu thơ?",
+                options: ["Cù lao miệt vườn", "Thung lũng đá", "Vịnh biển sâu", "Vùng cao nguyên"],
                 answer: 0,
-                explanation: "Cầu Mỹ Thuận bắc qua Sông Tiền, khánh thành năm 2000, là công trình thế kỷ kết nối Vĩnh Long với Tiền Giang và toàn vùng ĐBSCL.",
-                difficulty: "easy"
+                explanation: "Các cù lao nổi giữa sông (như cù lao An Bình) là nét đặc trưng nổi bật của du lịch sinh thái Vĩnh Long.",
+                tag: "SINH THÁI"
             },
             {
-                question: "Nơi khai sinh xuất xứ của giống Bưởi Năm Roi trứ danh nổi tiếng khắp cả nước thuộc đơn vị hành chính nào?",
-                options: ["Bình Minh", "Mang Thít", "Vũng Liêm", "Trà Ôn"],
+                poem: "“Ai qua sông Tiền sông Hậu,<br>Ghé thăm Vĩnh Long một dạo mà thương.”",
+                question: "Vĩnh Long là vùng đất trù phú nằm giữa hai dòng sông lớn nào của miền Tây Nam Bộ?",
+                options: ["Sông Tiền và Sông Hậu", "Sông Hồng và Sông Đáy", "Sông Hương và Sông Hàn", "Sông Mã và Sông Cả"],
                 answer: 0,
-                explanation: "Bưởi Năm Roi có nguồn gốc phát triển rực rỡ tại thị xã Bình Minh (Vĩnh Long), nổi tiếng không hạt, múi róc và ngọt thanh.",
-                difficulty: "medium"
+                explanation: "Vĩnh Long nằm ôm trọn giữa hai nhánh sông Tiền và sông Hậu, là trái tim phù sa của vùng ĐBSCL.",
+                tag: "ĐỊA LÝ"
             },
             {
-                question: "Con sông nào chảy ngang qua trung tâm thành phố Vĩnh Long mang tên gọi giàu ý nghĩa nghĩa tình?",
-                options: ["Sông Long Hồ", "Sông Trăng", "Sông Vàm Cỏ", "Sông Bé"],
+                poem: "“Long Hồ đất nước hữu tình,<br>Người đi một bước, bóng hình còn vương.”",
+                question: "Đoạn thơ ngợi ca cảnh sắc hữu tình gắn liền với địa danh huyện nào của Vĩnh Long?",
+                options: ["Long Hồ", "Mang Thít", "Bình Tân", "Trà Ôn"],
                 answer: 0,
-                explanation: "Sông Long Hồ ôm trọn lấy thành phố Vĩnh Long, đi vào ca dao cổ: 'Long Hồ giang nước ròng rồi lại nếp / Dòng sông xưa ghi dấu bao nghĩa tình'.",
-                difficulty: "medium"
+                explanation: "Long Hồ là huyện sông nước có lịch sử lâu đời, gắn liền với Dinh Long Hồ xưa và cảnh sắc thiên nhiên êm đềm.",
+                tag: "ĐỊA DANH"
             },
             {
-                question: "Di tích lịch sử và phong trào Nam Kỳ Khởi Nghĩa (1940) gắn liền sâu sắc với địa danh huyện nào ở Vĩnh Long?",
-                options: ["Vũng Liêm", "Bình Tân", "Long Hồ", "Tam Bình"],
+                poem: "“Vĩnh Long có đất có người,<br>Có sông, có nước, có lời hò khoan.”",
+                question: "Làn điệu âm nhạc / điệu hò dân gian nào được đề cập trong bài thơ trên?",
+                options: ["Lời hò khoan", "Điệu hát Xoan", "Hát Quan họ", "Múa Cồng chiêng"],
                 answer: 0,
-                explanation: "Vũng Liêm là quê hương anh hùng, nơi nổ ra cuộc khởi nghĩa Nam Kỳ đêm 22 rạng sáng 23/11/1940 lừng lẫy.",
-                difficulty: "medium"
+                explanation: "Các điệu hò sông nước (hò khoan, hò chèo ghe) thể hiện đời sống tinh thần phong phú của cư dân vùng sông nước.",
+                tag: "VĂN HÓA"
             },
             {
-                question: "Huyện Bình Tân (Vĩnh Long) được xem là thủ phủ nông sản xuất khẩu nổi tiếng của loại nông sản nào?",
-                options: ["Khoai lang mật", "Thanh long ruột đỏ", "Cà phê", "Hạt tiêu"],
+                poem: "“Chiều chiều trên bến sông Tiền,<br>Nghe câu vọng cổ nhớ miền Vĩnh Long.”",
+                question: "Thể loại âm nhạc truyền thống Nam Bộ nào vang lên trên bến sông Tiền làm say đắm lòng người?",
+                options: ["Câu vọng cổ / Đàn ca tài tử", "Ca trù", "Chầu văn", "Hát Then"],
                 answer: 0,
-                explanation: "Bình Tân nổi tiếng là vùng chuyên canh khoai lang lớn nhất miền Tây Nam Bộ với chất lượng khoai ngọt bùi xuất khẩu đi nhiều nước.",
-                difficulty: "medium"
+                explanation: "Vọng cổ và Đàn ca tài tử là linh hồn âm nhạc Nam Bộ, gắn liền với sông nước và tình quê hương Vĩnh Long.",
+                tag: "ÂM NHẠC"
             },
             {
-                question: "Cố Thủ tướng Chính phủ Võ Văn Kiệt - nhà lãnh đạo kiệt xuất của đất nước - là người con ưu tú của vùng đất nào?",
-                options: ["Vũng Liêm, Vĩnh Long", "Chợ Mới, An Giang", "Càng Long, Trà Vinh", "Gò Công, Tiền Giang"],
+                poem: "“Vĩnh Long quê lúa quê vườn,<br>Phù sa vun đắp, tình thương đậm đà.”",
+                question: "Yếu tố thiên nhiên nào được nhắc đến đã góp phần vun đắp nên quê lúa quê vườn Vĩnh Long?",
+                options: ["Phù sa sông nước", "Cát biển", "Đất đá vôi", "Thạch anh"],
                 answer: 0,
-                explanation: "Cố Thủ tướng Võ Văn Kiệt (bác Sáu Dân) sinh ra tại xã Trung Hiệp, huyện Vũng Liêm, tỉnh Vĩnh Long.",
-                difficulty: "medium"
+                explanation: "Lượng phù sa dồi dào từ sông Tiền và sông Hậu đã kiến tạo nên những cánh đồng lúa và vườn cây ăn trái tươi tốt.",
+                tag: "THIÊN NHIÊN"
             },
             {
-                question: "Loại hình nghệ thuật dân gian độc đáo nào thường được biểu diễn trên ghe xuồng sông nước Vĩnh Long?",
-                options: ["Đàn ca tài tử", "Hát Quan họ", "Hát Xoan", "Ca trù"],
+                poem: "“Về Vĩnh Long nhớ ghé Long Hồ,<br>Sông Tiền soi bóng, bến đò nên thơ.”",
+                question: "Hình ảnh 'bến đò nên thơ' soi bóng sông Tiền gắn liền với địa danh nào?",
+                options: ["Long Hồ", "Vũng Liêm", "Bình Tân", "Tam Bình"],
                 answer: 0,
-                explanation: "Đàn ca tài tử Nam Bộ là Di sản văn hóa phi vật thể của nhân loại, gắn bó mật thiết với đời sống ca dao, sông nước miền Tây Vĩnh Long.",
-                difficulty: "easy"
+                explanation: "Bến đò Long Hồ bên dòng sông Tiền là hình ảnh thơ mộng quen thuộc trong lòng du khách và thi ca.",
+                tag: "ĐỊA DANH"
             },
             {
-                question: "Hình ảnh phương tiện di chuyển truyền thống đặc trưng trong các bài ca dao sông nước Vĩnh Long là gì?",
-                options: ["Xuồng ba lá, đò ngang", "Xe ngựa", "Xe kéo", "Tàu hỏa"],
+                poem: "“Bình Minh xanh những vườn cây,<br>Mùa vui trái ngọt đong đầy tình quê.”",
+                question: "Vùng đất nào của Vĩnh Long được khắc họa với vẻ đẹp 'xanh những vườn cây, mùa vui trái ngọt'?",
+                options: ["Bình Minh", "Mang Thít", "Vũng Liêm", "Bình Tân"],
                 answer: 0,
-                explanation: "Mạng lưới sông rạch chằng chịt khiến chiếc xuồng ba lá và con đò ngang trở thành biểu tượng thân thương trong ca dao Vĩnh Long.",
-                difficulty: "easy"
+                explanation: "Thị xã Bình Minh trù phú nổi tiếng với các vườn cây ăn trái chuyên canh và nhịp sống yên bình.",
+                tag: "MIỆT VƯỜN"
             },
             {
-                question: "Cầu Cổ Chiên khánh thành năm 2015 nối liền tỉnh Vĩnh Long với tỉnh lân cận nào?",
-                options: ["Trà Vinh", "Bến Tre", "Sóc Trăng", "Cần Thơ"],
+                poem: "“Về thăm cù lao An Bình,<br>Miệt vườn xanh mát, nghĩa tình quê hương.”",
+                question: "Cù lao du lịch sinh thái trứ danh nào của Vĩnh Long được nhắc đến trong đoạn thơ?",
+                options: ["Cù lao An Bình", "Cù lao Dung", "Cù lao Chàm", "Cù lao Phố"],
                 answer: 0,
-                explanation: "Cầu Cổ Chiên nối liền tuyến giao thông giữa tỉnh Bến Tre và Trà Vinh / Vĩnh Long qua nhánh sông Cổ Chiên.",
-                difficulty: "medium"
+                explanation: "Cù lao An Bình nằm trọn giữa sông Cổ Chiên là điểm đến du lịch sinh thái nổi tiếng bậc nhất Vĩnh Long.",
+                tag: "DU LỊCH"
             },
             {
-                question: "Câu thành ngữ 'Gạo trắng nước trong' trong văn hóa Nam Bộ phản ánh nét đẹp nào của xứ sở sông nước?",
-                options: ["Thiên nhiên trù phú, cuộc sống ấm no", "Khí hậu khắc nghiệt", "Đất đai khô cằn", "Địa hình đồi núi"],
+                poem: "“Ai về Tam Bình quê tôi,<br>Nghe câu vọng cổ bồi hồi nhớ thương.”",
+                question: "Bài thơ nhắc đến vùng quê nào của Vĩnh Long gắn liền với giai điệu vọng cổ tha thiết?",
+                options: ["Tam Bình", "Long Hồ", "Mang Thít", "Trà Ôn"],
                 answer: 0,
-                explanation: "'Gạo trắng nước trong' mô tả vẻ đẹp của đồng ruộng phù sa màu mỡ và sự an bình, ấm no của xóm làng miền Tây.",
-                difficulty: "easy"
+                explanation: "Tam Bình là mảnh đất giàu truyền thống cách mạng và văn hóa miệt vườn của tỉnh Vĩnh Long.",
+                tag: "ĐỊA DANH"
             },
             {
-                question: "Món ăn dân dã nổi tiếng ở cù lao An Bình kết hợp bột bánh chiên giòn với loại thủy sản nào?",
-                options: ["Bánh xèo hến", "Bánh xèo thịt cừu", "Bánh xèo tôm hùm", "Bánh xèo cá hồi"],
+                poem: "“Về quê Vĩnh Long mùa này,<br>Bưởi thơm, chôm chôm, vườn cây ngọt ngào.”",
+                question: "Hai loại trái cây đặc sản nào được gọi tên trực tiếp trong bài thơ?",
+                options: ["Bưởi và chôm chôm", "Xoài và nhãn", "Sầu riêng và măng cụt", "Mãng cầu và dừa"],
                 answer: 0,
-                explanation: "Bánh xèo hến cù lao An Bình là món ăn độc đáo sử dụng con hến ngọt thơm đãi từ lòng sông Cổ Chiên.",
-                difficulty: "medium"
+                explanation: "Bưởi và chôm chôm là hai loại nông sản nổi tiếng thơm ngon, trĩu quả mỗi độ hè về ở Vĩnh Long.",
+                tag: "ĐẶC SẢN"
             },
             {
-                question: "Hình ảnh 'hàng dừa xanh nghiêng bóng bên dòng kênh' trong ca dao Vĩnh Long thể hiện tâm hồn gì của người dân?",
-                options: ["Lòng yêu quê hương và nét thanh bình", "Sự vội vã ồn ào", "Tính tình nóng nảy", "Khao khát đi xa"],
+                poem: "“An Bình cây trái sum suê,<br>Khách về thưởng quả, say mê cảnh vườn.”",
+                question: "Miệt vườn An Bình thu hút khách du lịch bởi vẻ đẹp đặc trưng nào?",
+                options: ["Cây trái sum suê, cảnh vườn xanh mát", "Núi đá hùng vĩ", "Hang động kỳ bí", "Suối nước nóng"],
                 answer: 0,
-                explanation: "Cảnh vật dừa xanh, dòng kênh hiền hòa phản ánh tính cách ôn hòa, mến khách và tình yêu quê hương mộc mạc.",
-                difficulty: "easy"
+                explanation: "Khách du lịch đến An Bình luôn say mê không gian xanh tươi, trải nghiệm hái quả trực tiếp tại vườn.",
+                tag: "DU LỊCH"
             },
             {
-                question: "Địa danh Long Hồ trong lịch sử Nam Bộ thời Nguyễn từng gắn với đơn vị hành chính quan trọng nào?",
-                options: ["Dinh Long Hồ", "Trấn Tây Thành", "Phủ Phước Long", "Hạt Gia Định"],
+                poem: "“Long Hồ cảnh sắc hữu tình,<br>Sông xanh, cây biếc, bóng hình quê hương.”",
+                question: "Câu thơ tả cảnh sông xanh, cây biếc thanh bình thuộc địa phương nào?",
+                options: ["Long Hồ", "Vũng Liêm", "Bình Tân", "Trà Ôn"],
                 answer: 0,
-                explanation: "Long Hồ Dinh lập năm 1732 là trung tâm hành chính - quân sự lịch sử quan trọng khai phá toàn vùng đất Nam Bộ xưa.",
-                difficulty: "hard"
+                explanation: "Cảnh sắc Long Hồ gắn liền với những con sông xanh mát và dòng phù sa êm đềm.",
+                tag: "ĐỊA DANH"
             },
             {
-                question: "Sông Cổ Chiên là một trong hai nhánh sông lớn được tách ra từ dòng sông chính nào?",
-                options: ["Sông Tiền", "Sông Hậu", "Sông Vàm Cỏ Đông", "Sông Mê Kông Thượng"],
+                poem: "“Vĩnh Long đất ngọt phù sa,<br>Người dân chất phác, thật thà mến thương.”",
+                question: "Nét đẹp tính cách nổi bật nào của con người Vĩnh Long được tôn vinh trong câu thơ?",
+                options: ["Chất phác, thật thà, mến thương", "Vội vã, kiêu ngạo", "Kín đáo, trầm mặc", "Nóng nảy, vội vàng"],
                 answer: 0,
-                explanation: "Sông Tiền khi chảy về đại địa Vĩnh Long chia thành hai nhánh chính ôm lấy cù lao An Bình, trong đó nhánh lớn là Sông Cổ Chiên.",
-                difficulty: "medium"
-            },
-            {
-                question: "Câu ca dao: 'Sông sâu bến nước con đò / Thương người nghĩa khí chẳng đo tấc lòng' khen ngợi tính cách nào?",
-                options: ["Sự trọng nghĩa khinh tài, chung thủy", "Sự mưu mẹo", "Tính kiêu ngạo", "Tính hà tiện"],
-                answer: 0,
-                explanation: "Người dân Vĩnh Long và Nam Bộ luôn đề cao lòng nghĩa khí, sự thẳng thắn và tình nghĩa thủy chung.",
-                difficulty: "easy"
-            },
-            {
-                question: "Văn hóa làng nghề gạch gốm Vĩnh Long có lịch sử kéo dài hơn bao nhiêu năm?",
-                options: ["Hơn 100 năm", "Chỉ 10 năm", "Hơn 500 năm", "Hơn 1000 năm"],
-                answer: 0,
-                explanation: "Làng nghề gốm gạch Vĩnh Long có lịch sử hình thành và phát triển bền bỉ hơn 100 năm dọc theo sông Cổ Chiên và Mang Thít.",
-                difficulty: "hard"
-            },
-            {
-                question: "Trái Thanh Trà nổi tiếng ngọt chua thơm nức tiếng vùng Nam Bộ trồng nhiều nhất ở địa phương nào của Vĩnh Long?",
-                options: ["Thị xã Bình Minh", "Huyện Vũng Liêm", "Huyện Mang Thít", "TP. Vĩnh Long"],
-                answer: 0,
-                explanation: "Thanh Trà Bình Minh là loại trái cây mộng nước nổi tiếng của Vĩnh Long với hai loại chua và ngọt thơm nức tiếng.",
-                difficulty: "hard"
-            },
-            {
-                question: "Bài ca dao nói về chợ nổi Trà Ôn xưa miêu tả cảnh buôn bán nhộn nhịp diễn ra chủ yếu trên đâu?",
-                options: ["Trên ghe xuồng sông nước", "Trên núi cao", "Trong nhà bạt", "Trên xe tải"],
-                answer: 0,
-                explanation: "Chợ nổi Trà Ôn là nét văn hóa thương hồ đặc sắc trên sông Hậu và sông Trà Ôn xưa kia.",
-                difficulty: "medium"
+                explanation: "Con người Nam Bộ nói chung và Vĩnh Long nói riêng luôn nổi tiếng với sự hiếu khách, chất phác và chân thành.",
+                tag: "CON NGƯỜI"
             }
         ];
 
         // ===============================================
-        // 2. CROSSWORD / WORD GUESS DATABASE (10 Levels)
+        // 2. CROSSWORD DATABASE (10 Levels)
         // ===============================================
         const crosswordLevelsPool = [
             {
-                answer: "SÔNG CỔ CHIÊN",
-                key: "SONGCOCHIEN",
-                category: "Địa danh sông nước",
+                answer: "BƯỞI NĂM ROI",
+                key: "BUOINAMROI",
+                category: "Đặc sản Vĩnh Long",
                 clues: [
-                    "Nhánh sông lớn bồi đắp phù sa ôm trọn cù lao An Bình.",
-                    "Tên gồm 10 chữ cái viết liền (SONGCOCHIEN).",
-                    "Có cầu Mỹ Thuận và cầu Cổ Chiên nổi tiếng đi qua."
+                    "Đặc sản trái cây trứ danh nhắc tới trong thơ: 'Vĩnh Long có bưởi...'",
+                    "Giống bưởi không hạt ngọt thanh nổi tiếng từ Bình Minh.",
+                    "Từ gồm 10 chữ cái (BUOINAMROI)."
                 ]
             },
             {
                 answer: "CÙ LAO AN BÌNH",
                 key: "CULAOANBINH",
-                category: "Du lịch sinh thái",
+                category: "Du lịch miệt vườn",
                 clues: [
-                    "Vùng đất nổi giữa sông nổi tiếng với những vườn cây trái bốn mùa.",
-                    "Nằm đối diện ngay trung tâm thành phố Vĩnh Long.",
-                    "Tên gồm 12 chữ cái (CULAOANBINH)."
+                    "Địa danh trong câu: 'Về thăm... miệt vườn xanh mát nghĩa tình quê hương'.",
+                    "Cù lao sinh thái trứ danh trên sông Cổ Chiên.",
+                    "Từ gồm 12 chữ cái (CULAOANBINH)."
                 ]
             },
             {
-                answer: "CAM SÀNH TRÀ ÔN",
-                key: "CAMSANHTRAON",
-                category: "Đặc sản Vĩnh Long",
+                answer: "SÔNG TIỀN",
+                key: "SONGTIEN",
+                category: "Sông nước Vĩnh Long",
                 clues: [
-                    "Loại trái cây giải khát mọng nước, vị ngọt đậm nổi tiếng.",
-                    "Gắn liền với tên huyện Trà Ôn.",
-                    "Tên gồm 13 chữ cái (CAMSANHTRAON)."
+                    "Dòng sông lớn trong câu thơ: '... nước ngọt, cá lành quanh năm'.",
+                    "Nơi soi bóng bến đò Long Hồ nên thơ.",
+                    "Từ gồm 8 chữ cái (SONGTIEN)."
                 ]
             },
             {
-                answer: "BƯỞI NĂM ROI",
-                key: "BUOINAMROI",
-                category: "Trái cây nổi tiếng",
+                answer: "BÌNH MINH",
+                key: "BINHMINH",
+                category: "Địa danh Vĩnh Long",
                 clues: [
-                    "Giống bưởi không hạt nổi tiếng originating từ đất Bình Minh.",
-                    "Tên gợi nhớ một hình phạt dân gian thú vị xưa.",
-                    "Tên gồm 10 chữ cái (BUOINAMROI)."
+                    "Quê hương cây trái trong câu: 'Ai về... quê tôi, thăm vườn cây trái...'",
+                    "Thị xã cửa ngõ Vĩnh Long nằm ven Sông Hậu.",
+                    "Từ gồm 8 chữ cái (BINHMINH)."
                 ]
             },
             {
-                answer: "VƯƠNG QUỐC LÒ GẠCH",
-                key: "VUONGQUOCLOGACH",
-                category: "Di sản kiến trúc",
+                answer: "LONG HỒ",
+                key: "LONGHO",
+                category: "Địa danh văn hóa",
                 clues: [
-                    "Biệt danh rực rỡ của vùng sản xuất gạch gốm thủ công Mang Thít.",
-                    "Hàng ngàn mái lò hình tháp đỏ rực rỡ bên bờ sông.",
-                    "Tên gồm 15 chữ cái (VUONGQUOCLOGACH)."
+                    "Huyện gắn liền với câu thơ: '... đất nước hữu tình, người đi một bước...'",
+                    "Địa danh nổi tiếng có bến đò nên thơ bên sông Tiền.",
+                    "Từ gồm 6 chữ cái (LONGHO)."
                 ]
             },
             {
-                answer: "ĐÀN CA TÀI TỬ",
-                key: "DANCATAITU",
-                category: "Nghệ thuật dân gian",
+                answer: "TAM BÌNH",
+                key: "TAMBINH",
+                category: "Quê hương ca dao",
                 clues: [
-                    "Di sản văn hóa phi vật thể thế giới của vùng sông nước Nam Bộ.",
-                    "Thường biểu diễn kết hợp đàn tranh, bầu, kìm, guitar phím lõm.",
-                    "Tên gồm 10 chữ cái (DANCATAITU)."
+                    "Mảnh đất trong thơ: 'Ai về... quê tôi, nghe câu vọng cổ bồi hồi...'",
+                    "Huyện giàu truyền thống của tỉnh Vĩnh Long.",
+                    "Từ gồm 7 chữ cái (TAMBINH)."
                 ]
             },
             {
-                answer: "KHOAI LANG BÌNH TÂN",
-                key: "KHOAILANGBINHTAN",
-                category: "Nông sản chủ lực",
+                answer: "VỌNG CỔ",
+                key: "VONGCO",
+                category: "Âm nhạc dân gian",
                 clues: [
-                    "Nông sản xuất khẩu nổi tiếng trứ danh của huyện Bình Tân.",
-                    "Có ruột tím, ruột vàng béo ngọt thơm ngon.",
-                    "Tên gồm 16 chữ cái (KHOAILANGBINHTAN)."
+                    "Giai điệu trong thơ: 'Chiều chiều trên bến sông Tiền, nghe câu... nhớ miền Vĩnh Long'.",
+                    "Làn điệu âm nhạc mến thương đặc trưng Nam Bộ.",
+                    "Từ gồm 6 chữ cái (VONGCO)."
                 ]
             },
             {
-                answer: "VÕ VĂN KIỆT",
-                key: "VOVANKIET",
-                category: "Danh nhân Vĩnh Long",
+                answer: "PHÙ SA",
+                key: "PHUSA",
+                category: "Thiên nhiên quê hương",
                 clues: [
-                    "Cố Thủ tướng Chính phủ, người con ưu tú kiệt xuất quê Vũng Liêm.",
-                    "Người gắn liền với đường dây 500kV Bắc - Nam lịch sử.",
-                    "Tên gồm 9 chữ cái (VOVANKIET)."
+                    "Yếu tố đất ngọt trong câu: 'Vĩnh Long quê lúa quê vườn, ... vun đắp tình thương đậm đà'.",
+                    "Nguồn dinh dưỡng sông mẹ mang đến cho các vườn cây.",
+                    "Từ gồm 5 chữ cái (PHUSA)."
                 ]
             },
             {
-                answer: "CẦU MỸ THUẬN",
-                key: "CAUMYTHUAN",
-                category: "Công trình thế kỷ",
+                answer: "CHÔM CHÔM",
+                key: "CHOMCHOM",
+                category: "Trái cây mùa hè",
                 clues: [
-                    "Cầu dây văng hiện đại đầu tiên bắc qua Sông Tiền.",
-                    "Nối liền Vĩnh Long với Tiền Giang.",
-                    "Tên gồm 10 chữ cái (CAUMYTHUAN)."
+                    "Loại quả ngọt trong thơ: 'Bưởi thơm, ..., vườn cây ngọt ngào'.",
+                    "Trái cây chín đỏ trĩu cạ mỗi mùa hè ở Vĩnh Long.",
+                    "Từ gồm 8 chữ cái (CHOMCHOM)."
                 ]
             },
             {
-                answer: "CA DAO VĨNH LONG",
-                key: "CADAOVINHLONG",
-                category: "Chủ đề chính",
+                answer: "VĨNH LONG",
+                key: "VINHLONG",
+                category: "Tỉnh nhà yêu thương",
                 clues: [
-                    "Kho tàng thơ ca dân gian ngọt ngào sâu lắng của người dân tỉnh nhà.",
-                    "Phản ánh nét đẹp sông nước, lòng chung thủy và tình yêu quê hương.",
-                    "Tên gồm 13 chữ cái (CADAOVINHLONG)."
+                    "Mảnh đất quê hương trong câu: 'Ai qua sông Tiền sông Hậu, ghé thăm... một dạo mà thương'.",
+                    "Miền đất Nam Bộ trù phú gạo trắng nước trong.",
+                    "Từ gồm 8 chữ cái (VINHLONG)."
                 ]
             }
         ];
 
         // ===============================================
-        // 3. GLOBAL APP STATE & LOCAL STORAGE
+        // 2B. WORD GUESS DATABASE (12 Levels)
+        // ===============================================
+        const wordGuessPool = [
+            {
+                poemBefore: "“Vĩnh Long có bưởi ",
+                poemAfter: ",<br>Có người con gái đẹp người đẹp nết.”",
+                correctWord: "Năm Roi",
+                distractors: ["Cam Sành", "Chôm Chôm", "Sầu Riêng"],
+                explanation: "Bưởi Năm Roi trứ danh Bình Minh là niềm tự hào nông sản tiêu biểu của tỉnh Vĩnh Long.",
+                hint: "Tên một loại bưởi nổi tiếng bắt đầu bằng chữ 'N' không hạt."
+            },
+            {
+                poemBefore: "“Vĩnh Long đất tốt cây xanh,<br>Sông ",
+                poemAfter: " nước ngọt, cá lành quanh năm.”",
+                correctWord: "Tiền",
+                distractors: ["Hậu", "Sài Gòn", "Đồng Nai"],
+                explanation: "Dòng sông Tiền chảy qua Vĩnh Long bồi đắp nguồn phù sa dồi dào cho miệt vườn tươi tốt.",
+                hint: "Dòng sông lớn phía bắc tỉnh Vĩnh Long."
+            },
+            {
+                poemBefore: "“Ai về ",
+                poemAfter: " quê tôi,<br>Thăm vườn cây trái, thăm người thủy chung.”",
+                correctWord: "Bình Minh",
+                distractors: ["Long Hồ", "Tam Bình", "Vũng Liêm"],
+                explanation: "Bình Minh là thị xã nằm ở bờ sông Hậu với những vườn cây trái xum xuê và con người mến khách.",
+                hint: "Tên địa danh có nghĩa là ánh nắng buổi sáng."
+            },
+            {
+                poemBefore: "“Vĩnh Long nổi tiếng cù lao ",
+                poemAfter: ",<br>Cây xanh trái ngọt ngọt ngào phù sa.”",
+                correctWord: "An Bình",
+                distractors: ["Dung", "Chàm", "Phố"],
+                explanation: "Cù lao An Bình nằm trên sông Cổ Chiên là điểm đến sinh thái miệt vườn nổi tiếng bậc nhất Vĩnh Long.",
+                hint: "Tên cù lao mang ý nghĩa 'An lành và Bình yên'."
+            },
+            {
+                poemBefore: "“Long Hồ đất nước hữu tình,<br>Người đi một bước, bóng hình còn ",
+                poemAfter: ".”",
+                correctWord: "vương",
+                distractors: ["thương", "nhớ", "vấn"],
+                explanation: "Thơ ca ngợi ca vẻ đẹp lưu xuyến tình người xứ Long Hồ khiến du khách đi rồi lòng vẫn vương vấn.",
+                hint: "Từ vần với từ 'đường', mang ý nghĩa đọng lại trong tâm trí."
+            },
+            {
+                poemBefore: "“Chiều chiều trên bến sông Tiền,<br>Nghe câu ",
+                poemAfter: " nhớ miền Vĩnh Long.”",
+                correctWord: "vọng cổ",
+                distractors: ["hò khoan", "quan họ", "ca trù"],
+                explanation: "Làn điệu vọng cổ tha thiết vang lên bên dòng sông Tiền gắn liền với tình yêu quê hương Nam Bộ.",
+                hint: "Thể loại âm nhạc dân gian đặc trưng của Đàn ca tài tử Nam Bộ."
+            },
+            {
+                poemBefore: "“Vĩnh Long quê lúa quê vườn,<br>Phù sa vun đắp, tình ",
+                poemAfter: " đậm đà.”",
+                correctWord: "thương",
+                distractors: ["nghĩa", "yêu", "vui"],
+                explanation: "Mảnh đất Nam Bộ giàu lòng nhân ái, phù sa sông nước bồi đắp cùng tình thương bao la của con người.",
+                hint: "Từ miêu tả tình cảm mến yêu dạt dào."
+            },
+            {
+                poemBefore: "“Ai qua sông Tiền sông Hậu,<br>Ghé thăm Vĩnh Long một ",
+                poemAfter: " mà thương.”",
+                correctWord: "dạo",
+                distractors: ["lần", "chút", "buổi"],
+                explanation: "Lời mời gọi ân tình du khách ghé thăm Vĩnh Long dù chỉ một dạo ngắn ngủi cũng đủ vấn vương.",
+                hint: "Từ chỉ một chuyến đi ngắn dạo chơi."
+            },
+            {
+                poemBefore: "“An Bình cây trái sum suê,<br>Khách về thưởng quả, say mê cảnh ",
+                poemAfter: ".”",
+                correctWord: "vườn",
+                distractors: ["sông", "đồng", "quê"],
+                explanation: "Không gian du lịch sinh thái miệt vườn An Bình làm say đắm bước chân du khách gần xa.",
+                hint: "Nơi trồng nhiều cây ăn trái xanh mát."
+            },
+            {
+                poemBefore: "“Về Vĩnh Long nhớ ghé ",
+                poemAfter: ",<br>Sông Tiền soi bóng, bến đò nên thơ.”",
+                correctWord: "Long Hồ",
+                distractors: ["Mang Thít", "Tam Bình", "Trà Ôn"],
+                explanation: "Long Hồ là huyện sông nước thơ mộng bên dòng sông Tiền với bến đò xưa mang đậm dấu ấn thi ca.",
+                hint: "Địa danh mang tên loài Rồng và Hồ nước."
+            },
+            {
+                poemBefore: "“Về quê Vĩnh Long mùa này,<br>Bưởi thơm, ",
+                poemAfter: ", vườn cây ngọt ngào.”",
+                correctWord: "chôm chôm",
+                distractors: ["sầu riêng", "măng cụt", "xoài cát"],
+                explanation: "Chôm chôm chín đỏ trĩu cạ là loài trái cây đặc sản nổi tiếng mỗi mùa hè ở miệt vườn Vĩnh Long.",
+                hint: "Trái cây quả có lông đỏ mọng ngọt ngào."
+            },
+            {
+                poemBefore: "“Vĩnh Long đất ngọt phù sa,<br>Người dân chất phác, thật thà ",
+                poemAfter: ".”",
+                correctWord: "mến thương",
+                distractors: ["dễ thương", "đáng yêu", "vui tươi"],
+                explanation: "Con người Vĩnh Long chất phác, chân thành và mến thương luôn mở rộng vòng tay đón khách.",
+                hint: "Từ ngữ vần với từ 'phù sa' ở câu trên."
+            }
+        ];
+
+        // ===============================================
+        // 3. GLOBAL APP STATE & AUDIO SYNTHESIZER
         // ===============================================
         let state = {
             studentName: '',
@@ -960,14 +1152,16 @@
             gamesPlayed: 0,
             quizPlayed: 0,
             crosswordPlayed: 0,
+            wordGuessPlayed: 0,
             crosswordSolved: 0,
+            wordGuessSolved: 0,
             soundEnabled: true,
             theme: 'dark',
             particleDensity: 30,
             
             // Current Session States
             currentScreen: 'bootScreen',
-            currentGame: null, // 'quiz' or 'crossword'
+            currentGame: null,
             currentScore: 0,
             correctCount: 0,
             totalCount: 0,
@@ -982,10 +1176,16 @@
             crosswordIndex: 0,
             crosswordGuesses: [],
             crosswordTimerInterval: null,
-            crosswordSeconds: 0
+            crosswordSeconds: 0,
+
+            // Word Guess State
+            wordGuessQuestions: [],
+            wordGuessIndex: 0,
+            wordGuessTimerInterval: null,
+            wordGuessSeconds: 0
         };
 
-        // Web Audio API Synthesizer (No external files!)
+        // Web Audio API Synthesizer
         let audioCtx = null;
         function getAudioContext() {
             if (!audioCtx) {
@@ -1026,9 +1226,9 @@
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(523.25, now); // C5
-                osc.frequency.setValueAtTime(659.25, now + 0.1); // E5
-                osc.frequency.setValueAtTime(783.99, now + 0.2); // G5
+                osc.frequency.setValueAtTime(523.25, now);
+                osc.frequency.setValueAtTime(659.25, now + 0.1);
+                osc.frequency.setValueAtTime(783.99, now + 0.2);
                 gain.gain.setValueAtTime(0.2, now);
                 gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
                 osc.connect(gain);
@@ -1113,7 +1313,6 @@
                 ctx.shadowColor = `rgba(${particleColor}, 0.8)`;
                 ctx.fill();
 
-                // Draw subtle connecting lines between close particles
                 for (let j = idx + 1; j < particles.length; j++) {
                     const p2 = particles[j];
                     const dx = p.x - p2.x;
@@ -1133,7 +1332,7 @@
         }
 
         // ===============================================
-        // 5. SCREEN NAVIGATION & FASTFETCH BOOT
+        // 5. SCREEN NAVIGATION & BOOT SEQUENCE
         // ===============================================
         function switchScreen(screenId) {
             const current = document.getElementById(state.currentScreen);
@@ -1144,7 +1343,6 @@
                 setTimeout(() => {
                     current.style.display = 'none';
                     target.style.display = 'flex';
-                    // Trigger reflow for CSS transition
                     void target.offsetWidth;
                     target.classList.add('active');
                     state.currentScreen = screenId;
@@ -1164,9 +1362,9 @@
             const bootPercent = document.getElementById('bootPercent');
 
             const logLines = [
-                "$ loading quiz-system core...",
-                "$ loading vinh-long folk-verse database...",
-                "$ initializing interactive modules...",
+                "$ loading poem-quiz engine...",
+                "$ loading vinh-long verses dataset...",
+                "$ initializing interactive components...",
                 "$ calibrating web-audio synthesizer...",
                 "$ system status: OPTIMAL & READY"
             ];
@@ -1179,7 +1377,6 @@
                     const p = document.createElement('p');
                     p.className = 'blinking-cursor';
                     p.textContent = logLines[lineIdx];
-                    // remove blinking cursor from previous lines
                     const prevs = logsContainer.querySelectorAll('.blinking-cursor');
                     prevs.forEach(el => el.classList.remove('blinking-cursor'));
                     logsContainer.appendChild(p);
@@ -1196,7 +1393,7 @@
                         checkExistingName();
                     }, 800);
                 }
-            }, 500);
+            }, 400);
         }
 
         function skipBoot() {
@@ -1265,7 +1462,7 @@
         }
 
         // ===============================================
-        // 7. GAME 1: ĐỐ VUI (QUIZ) LOGIC
+        // 7. GAME 1: ĐOÁN THƠ CA DAO (QUIZ) LOGIC
         // ===============================================
         function startQuiz() {
             playClickSound();
@@ -1276,7 +1473,7 @@
             state.quizIndex = 0;
             state.quizSeconds = 0;
 
-            // Select 15 random questions from pool
+            // Select 15 random questions from poem pool
             const shuffled = [...quizQuestionsPool].sort(() => Math.random() - 0.5);
             state.quizQuestions = shuffled.slice(0, 15);
 
@@ -1304,14 +1501,14 @@
 
             document.getElementById('quizQuestionCount').textContent = `CÂU ${String(currentNum).padStart(2, '0')} / 15`;
             document.getElementById('quizProgressBar').style.width = `${(currentNum / 15) * 100}%`;
-            document.getElementById('quizDifficulty').textContent = q.difficulty.toUpperCase();
+            document.getElementById('quizTag').textContent = q.tag || 'THƠ CA DAO VĨNH LONG';
+            document.getElementById('quizPoemText').innerHTML = q.poem;
             document.getElementById('quizQuestionText').textContent = q.question;
 
             // Hide Explanation Box & Next Button
             document.getElementById('quizExplanationBox').classList.add('hidden');
             document.getElementById('nextQuizBtn').classList.add('hidden');
 
-            // Shuffle option choices while remembering original correct answer
             const optionsContainer = document.getElementById('quizOptionsContainer');
             optionsContainer.innerHTML = '';
 
@@ -1335,7 +1532,6 @@
         }
 
         function selectQuizAnswer(selectedBtn, isCorrect, explanation) {
-            // Disable all option buttons
             const allBtns = document.querySelectorAll('.option-btn');
             allBtns.forEach(btn => btn.onclick = null);
 
@@ -1516,14 +1712,12 @@
                 return;
             }
 
-            // Find first empty cell
             const emptyIdx = state.crosswordGuesses.findIndex(g => g === '');
             if (emptyIdx !== -1 && /^[A-Z]$/i.test(key)) {
                 playClickSound();
                 state.crosswordGuesses[emptyIdx] = key.toUpperCase();
                 renderCrosswordGrid();
 
-                // Check if user filled all cells
                 if (!state.crosswordGuesses.includes('')) {
                     checkCrosswordAnswer();
                 }
@@ -1542,7 +1736,6 @@
                 state.crosswordSolved++;
                 document.getElementById('crosswordScoreDisplay').textContent = state.currentScore;
 
-                // Animate cells
                 const cells = document.querySelectorAll('#crosswordGrid > div');
                 cells.forEach(cell => {
                     cell.classList.add('animate-flip', 'bg-emerald-950', 'border-emerald-400', 'text-emerald-300');
@@ -1571,7 +1764,6 @@
             }
 
             const level = crosswordLevelsPool[state.crosswordIndex];
-            // Find an unrevealed cell
             const unrevealedIndices = [];
             state.crosswordGuesses.forEach((val, idx) => {
                 if (val !== level.key[idx]) unrevealedIndices.push(idx);
@@ -1605,15 +1797,149 @@
         }
 
         // ===============================================
+        // 8B. GAME 3: ĐOÁN TỪ CA DAO (WORD GUESS) LOGIC
+        // ===============================================
+        function startWordGuess() {
+            playClickSound();
+            state.currentGame = 'wordGuess';
+            state.currentScore = 0;
+            state.correctCount = 0;
+            state.totalCount = wordGuessPool.length;
+            state.wordGuessIndex = 0;
+            state.wordGuessSeconds = 0;
+
+            const shuffled = [...wordGuessPool].sort(() => Math.random() - 0.5);
+            state.wordGuessQuestions = shuffled;
+
+            document.getElementById('wordGuessScoreDisplay').textContent = state.currentScore;
+            switchScreen('wordGuessScreen');
+
+            startWordGuessTimer();
+            loadWordGuessLevel();
+        }
+
+        function startWordGuessTimer() {
+            clearInterval(state.wordGuessTimerInterval);
+            const timerEl = document.getElementById('wordGuessTimer');
+            state.wordGuessTimerInterval = setInterval(() => {
+                state.wordGuessSeconds++;
+                const mins = String(Math.floor(state.wordGuessSeconds / 60)).padStart(2, '0');
+                const secs = String(state.wordGuessSeconds % 60).padStart(2, '0');
+                timerEl.textContent = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function loadWordGuessLevel() {
+            const item = state.wordGuessQuestions[state.wordGuessIndex];
+            const currentNum = state.wordGuessIndex + 1;
+
+            document.getElementById('wordGuessLevelTag').textContent = `CÂU ${String(currentNum).padStart(2, '0')} / ${String(state.wordGuessQuestions.length).padStart(2, '0')}`;
+            document.getElementById('wordGuessProgressBar').style.width = `${(currentNum / state.wordGuessQuestions.length) * 100}%`;
+
+            const poemBox = document.getElementById('wordGuessPoemBox');
+            poemBox.innerHTML = `${item.poemBefore}<span id="wordBlankTile" class="px-3 py-1 mx-1 rounded-lg bg-emerald-950 border-2 border-dashed border-emerald-400 text-emerald-300 font-bold tracking-wide shadow-md">[ ??? ]</span>${item.poemAfter}`;
+
+            document.getElementById('wordGuessExplanationBox').classList.add('hidden');
+            document.getElementById('nextWordGuessBtn').classList.add('hidden');
+
+            const optionsGrid = document.getElementById('wordGuessOptionsGrid');
+            optionsGrid.innerHTML = '';
+
+            const allWords = [item.correctWord, ...item.distractors].sort(() => Math.random() - 0.5);
+
+            allWords.forEach(word => {
+                const btn = document.createElement('button');
+                btn.className = `word-tile-btn p-3.5 rounded-xl bg-slate-900/90 border border-emerald-500/30 hover:border-emerald-400 hover:bg-slate-800 text-white font-semibold text-sm md:text-base transition-all duration-200 shadow-md shadow-emerald-950/40`;
+                btn.textContent = word;
+                btn.onclick = () => selectWordGuessOption(btn, word, item);
+                optionsGrid.appendChild(btn);
+            });
+        }
+
+        function selectWordGuessOption(btn, selectedWord, item) {
+            const allBtns = document.querySelectorAll('.word-tile-btn');
+            allBtns.forEach(b => b.onclick = null);
+
+            const blankTile = document.getElementById('wordBlankTile');
+            const explBox = document.getElementById('wordGuessExplanationBox');
+            const explTitle = document.getElementById('wordGuessExplTitle');
+            const explText = document.getElementById('wordGuessExplText');
+            const nextBtn = document.getElementById('nextWordGuessBtn');
+
+            blankTile.textContent = selectedWord.toUpperCase();
+            blankTile.classList.remove('border-dashed', 'border-emerald-400', 'bg-emerald-950');
+
+            if (selectedWord === item.correctWord) {
+                playCorrectSound();
+                blankTile.classList.add('bg-emerald-600', 'text-white', 'border-emerald-300', 'animate-bounce');
+                btn.classList.add('bg-emerald-950', 'border-emerald-400', 'text-emerald-300');
+
+                state.currentScore += 150;
+                state.correctCount++;
+                state.wordGuessSolved++;
+                document.getElementById('wordGuessScoreDisplay').textContent = state.currentScore;
+
+                createScorePopup(btn, '+150');
+
+                explTitle.className = "flex items-center gap-2 font-bold text-sm text-emerald-400";
+                explTitle.innerHTML = `<i class="fa-solid fa-circle-check"></i> CHÍNH XÁC! +150 POINTS`;
+            } else {
+                playWrongSound();
+                blankTile.classList.add('bg-rose-950', 'text-rose-300', 'border-rose-500', 'animate-shake');
+                btn.classList.add('bg-rose-950', 'border-rose-500', 'text-rose-300');
+
+                explTitle.className = "flex items-center gap-2 font-bold text-sm text-rose-400";
+                explTitle.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> CHƯA ĐÚNG! TỪ ĐÚNG LÀ: "${item.correctWord.toUpperCase()}"`;
+            }
+
+            explText.textContent = item.explanation;
+            explBox.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            nextBtn.classList.add('flex');
+        }
+
+        function useWordGuessHint() {
+            if (state.currentScore < 50) {
+                playWrongSound();
+                return;
+            }
+            playClickSound();
+            state.currentScore = Math.max(0, state.currentScore - 50);
+            document.getElementById('wordGuessScoreDisplay').textContent = state.currentScore;
+
+            const item = state.wordGuessQuestions[state.wordGuessIndex];
+            const explBox = document.getElementById('wordGuessExplanationBox');
+            const explTitle = document.getElementById('wordGuessExplTitle');
+            const explText = document.getElementById('wordGuessExplText');
+
+            explTitle.className = "flex items-center gap-2 font-bold text-sm text-amber-400";
+            explTitle.innerHTML = `<i class="fa-solid fa-lightbulb"></i> GỢI Ý ĐOÁN TỪ (-50 PTS)`;
+            explText.textContent = item.hint;
+            explBox.classList.remove('hidden');
+        }
+
+        function nextWordGuessLevel() {
+            playClickSound();
+            state.wordGuessIndex++;
+            if (state.wordGuessIndex < state.wordGuessQuestions.length) {
+                loadWordGuessLevel();
+            } else {
+                finishGame();
+            }
+        }
+
+        // ===============================================
         // 9. FINISH GAME & RESULTS SCREEN
         // ===============================================
         function finishGame() {
             clearInterval(state.quizTimerInterval);
             clearInterval(state.crosswordTimerInterval);
+            clearInterval(state.wordGuessTimerInterval);
 
             state.gamesPlayed++;
             if (state.currentGame === 'quiz') state.quizPlayed++;
             if (state.currentGame === 'crossword') state.crosswordPlayed++;
+            if (state.currentGame === 'wordGuess') state.wordGuessPlayed++;
 
             if (state.currentScore > state.bestScore) {
                 state.bestScore = state.currentScore;
@@ -1621,7 +1947,6 @@
 
             saveSettings();
 
-            // Setup Results Screen
             document.getElementById('resultPlayerName').textContent = `Học sinh: ${state.studentName.toUpperCase()}`;
             document.getElementById('resultCorrectCount').textContent = `${state.correctCount} / ${state.totalCount}`;
 
@@ -1638,7 +1963,6 @@
 
             switchScreen('resultsScreen');
 
-            // Count up score animation
             let displayVal = 0;
             const targetVal = state.currentScore;
             const scoreEl = document.getElementById('resultScore');
@@ -1657,8 +1981,10 @@
         function replayCurrentGame() {
             if (state.currentGame === 'quiz') {
                 startQuiz();
-            } else {
+            } else if (state.currentGame === 'crossword') {
                 startCrossword();
+            } else {
+                startWordGuess();
             }
         }
 
